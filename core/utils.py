@@ -2,13 +2,13 @@ import json
 import re
 
 
-# ✅ Load prompt from file
+# Load prompt from file
 def load_prompt(path: str) -> str:
     with open(path, "r", encoding="utf-8") as f:
         return f.read()
 
 
-# ✅ Safe JSON parsing (Groq-safe)
+# Safe JSON parsing (Groq-safe)
 def safe_json_parse(text: str):
     try:
         return json.loads(text)

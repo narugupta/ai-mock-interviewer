@@ -61,13 +61,13 @@ if st.session_state.running:
 
     # ---------------- END CONDITION ----------------
     if st.session_state.turn >= MAX_TURNS:
-        st.success("✅ Interview completed!")
+        st.success("Interview completed!")
 
-        with st.spinner("🧠 Generating final feedback..."):
+        with st.spinner("Generating final feedback..."):
             transcript = orch.memory.format_full_transcript()
             feedback = orch.coach.generate_feedback(transcript)
 
-        st.markdown("## 🧑‍🏫 Final Feedback")
+        st.markdown("##Final Feedback")
         st.markdown(feedback)
 
         st.session_state.running = False
@@ -75,9 +75,9 @@ if st.session_state.running:
 
     # ---------------- GENERATE QUESTION ----------------
     if st.session_state.question is None:
-        with st.spinner("🤔 Generating question..."):
+        with st.spinner("Generating question..."):
             
-            # 🔥 ADAPTIVE LOGIC ADDED HERE 🔥
+            # ADAPTIVE LOGIC ADDED HERE 
             hint = None
             if st.session_state.last_eval:
                 eval_data = st.session_state.last_eval
@@ -127,7 +127,7 @@ if st.session_state.running:
         st.session_state.chat.append({"role": "user", "content": answer})
 
         # ---------------- EVALUATION ----------------
-        with st.spinner("📊 Evaluating..."):
+        with st.spinner("Evaluating..."):
             evaluation = orch.evaluator.evaluate(question, answer)
 
         st.session_state.last_eval = evaluation
@@ -144,5 +144,5 @@ if st.session_state.running:
 
     # ---------------- SHOW LAST EVALUATION (AFTER RERUN) ----------------
     if st.session_state.last_eval:
-        st.markdown("### 📊 Last Evaluation")
+        st.markdown("### Last Evaluation")
         st.json(st.session_state.last_eval)

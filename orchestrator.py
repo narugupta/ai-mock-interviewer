@@ -12,7 +12,7 @@ class InterviewOrchestrator:
         self.memory = Memory()
 
     def run(self, role, focus, background):
-        print("\n🎤 Starting Mock Interview...\n")
+        print("\nStarting Mock Interview...\n")
 
         NUM_TURNS = 6
 
@@ -52,19 +52,19 @@ class InterviewOrchestrator:
             # Evaluate
             evaluation = self.evaluator.evaluate(question, answer)
 
-            print("\n📊 Evaluation:")
+            print("\nEvaluation:")
             print(evaluation)
 
             # Store
             self.memory.add_turn(question, answer, evaluation)
 
-        print("\n🎯 Generating Final Feedback...\n")
+        print("\nGenerating Final Feedback...\n")
 
-        # 🔥 Coach phase
+        # Coach phase
         transcript = self.memory.format_full_transcript()
         feedback = self.coach.generate_feedback(transcript)
 
-        print("\n🧑‍🏫 Final Feedback:\n")
+        print("\nFinal Feedback:\n")
         print(feedback)
 
-        print("\n✅ Interview Completed!\n")
+        print("\nInterview Completed!\n")
