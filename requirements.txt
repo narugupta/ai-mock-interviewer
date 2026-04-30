@@ -1,0 +1,6 @@
+openai
+groq
+python-dotenv
+pydantic
+rich
+streamlit
