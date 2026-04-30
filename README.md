@@ -1,5 +1,5 @@
 # AI Mock Interview Coach
-**Live Demo:** https://your-app.streamlit.app
+**Live Demo:** https://aimock.streamlit.app/
 
 A multi-agent AI system that simulates realistic mock interviews and provides structured, actionable feedback to help candidates improve.
 
